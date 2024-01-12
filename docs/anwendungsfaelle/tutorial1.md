@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Anwendungsfall 1 - No-budget Production with AI Tools
+title: No-budget Production with AI Tools
 parent: Anwendungsfälle
 nav_order: 1
 ---
