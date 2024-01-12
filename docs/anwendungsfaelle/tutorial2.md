@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Anwendungsfall 2 - Auto-Director
-parent: Anwendungsfaelle
+parent: Anwendungsfälle
 nav_order: 2
 ---
 
