@@ -5,7 +5,7 @@ nav_order: 2
 has_children: false
 ---
 
-# Experimental AI Tools
+# Übersicht KI-Tools
 
 ## Text Generation / Language Models
 [Chat-GPT](https://openai.com/chatgpt) – Conversational AI by OpenAI
