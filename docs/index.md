@@ -1,6 +1,6 @@
 ---
 layout: default
-title: KI-Tools für das Virtuelle Studio
+title: Startseite
 nav_order: 1
 has_children: false
 ---
