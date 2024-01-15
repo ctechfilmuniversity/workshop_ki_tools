@@ -22,27 +22,16 @@ class: center, middle, inverse
 
 Björn Stockleben und ich möchten nun kurzen Impuls zu Thema KI im Film geben, und zwar...
 
----
-layout:false
+
 
 ## Agenda
 
---
+
 1. Einführung Machine Learning und Kontexte
-
---
 2. Überblick KI Tools für Kreativschaffende
-
---
 3. Anwendungsfall *No-Budget-Produktion mit KI-Tools*
-
---
 4. Anwendungsfall *Auto-Director*
-
---
 5. Experimente KI-Tools
-
---
 6. Reflexion und Diskussion
 
 ---
