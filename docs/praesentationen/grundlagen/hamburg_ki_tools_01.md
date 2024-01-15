@@ -8,7 +8,8 @@ class: center, middle, inverse
   
 # *KI Workshop*
 
-#### Prof. Dr. Björn Stockleben & Prof. Dr. Lena Gieseke & Anna Brauwers & Malte Hillebrand
+#### Anna Brauwers & Malte Hillebrand
+#### Prof. Dr. Björn Stockleben & Prof. Dr. Lena Gieseke 
 
 .center[<img src="./img/cx_filmuni_logo.png" alt="cx_filmuni_logo" style="width:100%;">]
 
