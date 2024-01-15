@@ -27,7 +27,7 @@ Mit
 * [Prof. Dr. Björn Stockleben](https://www.filmuniversitaet.de/portrait/person/bjoern-stockleben)
 
 
-Agenda
+## Agenda
 1. [Einführung Machine Learning und Kontexte](./praesentationen/grundlagen/index.html)
 2. Überblick KI Tools für Kreativschaffende
 3. [Anwendungsfall *No-budget Production with AI Tools*](./anwendungsfaelle/tutorial1.md)
