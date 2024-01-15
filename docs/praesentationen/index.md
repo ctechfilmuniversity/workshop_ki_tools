@@ -9,4 +9,4 @@ has_children: false
 
 
 * [Einführung Machine Learning und Kontexte ](./grundlagen/index.html)
-* [Überblick KI Tools für Kreativschaffende]()
+* Überblick KI Tools für Kreativschaffende

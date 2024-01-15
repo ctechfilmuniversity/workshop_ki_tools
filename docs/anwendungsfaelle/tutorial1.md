@@ -1,12 +1,12 @@
 ---
 layout: default
-title: No-budget Production with AI Tools
+title: No-budget-Produktion mit KI-Tools
 parent: Anwendungsfälle
 nav_order: 1
 ---
 
 
-# No-Budget-Produktion mit KI-Tools
+# *No-Budget*-Produktion mit KI-Tools
 
 In diesem Workshop werden wir uns mit der Videoproduktion befassen und dabei modernste KI-Tools nutzen, um Inhalte schnell und kostenfrei zu erstellen.
 
