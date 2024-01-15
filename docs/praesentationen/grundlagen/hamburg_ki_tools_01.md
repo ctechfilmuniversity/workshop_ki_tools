@@ -51,6 +51,7 @@ template:inverse
 .footnote[[[maclife]](https://www.maclife.de/news/app-entwickler-koennen-gesichtsausdruecke-iphone-x-auswerten-speichern-10097355.html)]
 
 ---
+layout:false
 
 .center[<img src="./img/pseudomnesia.png" alt="facerecognition_01" style="width:56%;">]
 
