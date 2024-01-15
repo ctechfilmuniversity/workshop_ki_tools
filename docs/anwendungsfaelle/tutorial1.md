@@ -6,88 +6,91 @@ nav_order: 1
 ---
 
 
-# Anwendungsfall 1: No-budget Production with AI Tools
+# No-Budget-Produktion mit KI-Tools
 
-In this workshop, we will navigate the landscape of video production, leveraging state-of-the-art AI tools to produce content quickly at zero cost.
+In diesem Workshop werden wir uns mit der Videoproduktion befassen und dabei modernste KI-Tools nutzen, um Inhalte schnell und kostenfrei zu erstellen.
 
-Within this session, we will utilize:
-1. ChatGPT to generate a script on a given topic.
-2. PlayHT for generating the voiceover.
-3. Lumen5 will generate the actual video
-4. and Kapwing will add subtitles in no-time.
+Hierfür werden wir folgende Tools verwenden:
 
-## 1. Script generation with ChatGPT
+1. **ChatGPT:** Zur Generierung eines Skripts zu einem bestimmten Thema.
+2. **PlayHT:** Für die Erstellung des Voiceovers.
+3. **Lumen5:** Zur Generierung des eigentlichen Videos.
+4. **Kapwing:** Zum Hinzufügen von Untertiteln in kürzester Zeit.
 
-1. Navigate to https://chat.openai.com/ and log into your account.
+## 1. Skriptgenerierung mit ChatGPT
 
-2. Strike up a new conversation with ChatGPT and ask to have a text on a specific topic generated.
+Besuchen Sie https://chat.openai.com/ und melden Sie sich in Ihrem Konto an.
 
-3. If you’re not satisfied with the quality of the generated answer, here are phrases you can use and customize to help you reach your desired outcome:
+Starten Sie eine neue Konversation mit ChatGPT und bitten Sie um die Generierung eines Texts zu einem bestimmten Thema.
 
-    - “Please generate a text on { topic } that has a good and concise length for narration on TikTok.”
-    - “Structure the text in an engaging and captivating way, moving punchlines and twist to the end of the paragraphs.”
+Falls Sie mit der Qualität der generierten Antwort nicht zufrieden sind, verwenden Sie angepasste Phrasen wie:
+  - "Generieren Sie bitte einen Text zum Thema {Thema}, der eine gute und prägnante Länge für die Erzählung auf TikTok hat."
+  - "Strukturieren Sie den Text auf eine ansprechende und fesselnde Weise, wobei Pointen und Wendungen am Ende der Absätze stehen."
 
-## 2. Voiceover with PlayHT
+## 2. Voiceover mit PlayHT
 
-1. Navigate to https://play.ht/ and log into your account
+Besuchen Sie https://play.ht/ und melden Sie sich in Ihrem Konto an.
 
-2. Click the button “Go to the studio” on the top right and enter the voiceover studio.
+Klicken Sie oben rechts auf "Zum Studio gehen" und betreten Sie das Voiceover-Studio.
 
-3. “Create New File” and choose an appropriate model.
+"Neue Datei erstellen" und ein geeignetes Modell auswählen.
 
-4. Copy the ChatGPT script into PlayHT transcript area.
+Kopieren Sie das ChatGPT-Skript in den PlayHT-Transkriptbereich.
 
-5. Preview your narration with the play-button on the left of each text.
+Eine Vorschau Ihrer Vertonung mit der Wiedergabetaste finden Sie links neben jedem Text.
 
-6. Change the narrator and generated paragraphs by clicking on the text-field:
+Ändern Sie den Sprecher und die generierten Absätze, indem Sie auf das Textfeld klicken:
 
-    - Regenerate a paragraph by clicking on the right
-    - Change the narrator by clicking on the name of the speaker
+  - Ein Absatz wird durch Klicken rechts regeneriert.
 
-7. Once you are finished, press “Generate All” to get your narration!
+  - Der Sprecher wird durch Klicken auf den Namen geändert.
 
-8. Preview the whole generation by clicking the play button on top of the bottom timeline.
+Wenn Sie fertig sind, drücken Sie "Alle generieren", um Ihre Vertonung zu erhalten!
 
-9. If you’re satisfied, hit “Export” → as a single audio file in the top right.
+Vorschau der gesamten Generierung durch Klicken auf die Wiedergabetaste oben auf der unteren Zeitleiste.
 
-## 3. Generating a video with Lumen5
+Wenn Sie zufrieden sind, klicken Sie auf "Exportieren" → als einzelne Audiodatei oben rechts.
 
-1. Navigate to https://lumen5.com and log into your account.
 
-2. If you’re not automatically redirected, open the dashboard.
+## 3. Generierung eines Videos mit Lumen5
 
-3. Click on “New Video”.
+Besuchen Sie https://lumen5.com und melden Sie sich in Ihrem Konto an.
 
-4. Choose a starting template.
+Falls Sie nicht automatisch weitergeleitet werden, öffnen Sie das Dashboard.
 
-5. Click on “Voiceover” to upload your generated voiceover as a starting basis.
+Klicken Sie auf "Neues Video".
 
-6. Wait for the inital video generation.
+Wählen Sie eine Startvorlage aus.
 
-7. Correc the transcript by clicking on the word to edit.
+Klicken Sie auf "Voiceover", um Ihr generiertes Voiceover als Ausgangsbasis hochzuladen.
 
-8. Change the format on the left tab “Format”, then wait for re-generation of your video in a different format.
+Warten Sie auf die anfängliche Videogenerierung.
 
-9. Edit indivdual “slides” by clicking on the parts you’d like to change.
+Korrigieren Sie das Transkript, indem Sie auf ein Wort klicken, um es zu bearbeiten.
 
-10. Once you’re done, press “Publish”.
+Ändern Sie das Format auf der linken Registerkarte "Format" und warten Sie auf die Neugenerierung Ihres Videos in einem anderen Format.
 
-## 4. Adding animated subtitles using Kapwing
+Bearbeiten Sie einzelne "Slides", indem Sie auf die Teile klicken, die Sie ändern möchten.
 
-1. Go to https://www.kapwing.com/ and log into your account.
+Wenn Sie fertig sind, klicken Sie auf "Veröffentlichen".
 
-2. Navigate to your workspace and “Create New Project”.
 
-3. Click to upload the video created with Lumen5.
+## 4. Hinzufügen animierter Untertitel mit Kapwing
 
-4. Open the tab “Subtitles” and click on “Generate Subtitles”.
+ Besuchen Sie https://www.kapwing.com/ und melden Sie sich in Ihrem Konto an.
 
-5. Again, because the narration is not 100% clean, we check it with the text generated by ChatGPT.
+ Gehen Sie zu Ihrem Arbeitsbereich und klicken Sie auf "Neues Projekt erstellen".
 
-6. Go through the subtitles and correct spelling, or add Emojis!
+ Laden Sie das Video hoch, das mit Lumen5 erstellt wurde.
 
-7. Once you’re done, click on the subtitles in your timeline and edit the style by using the menu on the right:
+Öffnen Sie den Tab "Untertitel" und klicken Sie auf "Untertitel generieren".
 
-    - Choose a template as a starting point and further customize the look.
+ Da die Vertonung nicht zu 100 % sauber ist, überprüfen Sie sie mit dem von ChatGPT generierten Transkript.
 
-8. When you’re happy with the look of your subtitles, “Export Project”, select the desired format and download your completely generated video :)
+Gehen Sie die Untertitel durch und korrigieren Sie Rechtschreibfehler oder fügen Sie Emojis hinzu!
+
+Wenn Sie fertig sind, klicken Sie auf die Untertitel in Ihrer Zeitleiste und bearbeiten Sie den Stil über das Menü rechts:
+
+  - Wählen Sie eine Vorlage als Ausgangspunkt und passen Sie das Aussehen weiter an.
+
+Wenn Sie mit dem Aussehen Ihrer Untertitel zufrieden sind, klicken Sie auf "Projekt exportieren", wählen Sie das gewünschte Format und laden Sie Ihr vollständig generiertes Video herunter :)

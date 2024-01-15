@@ -7,146 +7,137 @@ nav_order: 2
 
 
 
-# Anwendungsfall 2: Auto-Director
+# Auto-Director
 
-There are several ways YOLO can be implemented to detect different objects of interest on still images, videos or real time camera footage.
+Es gibt verschiedene Möglichkeiten, wie YOLO implementiert werden kann, um verschiedene Objekte auf Standbildern, Videos oder Echtzeit-Kameramaterial zu erkennen. Der schnellste Weg für die Erkennung, leistungstechnisch, besteht darin, YOLO mit darknet unter Verwendung von CUDA zu implementieren. Dies ist auch der komplexeste Weg, YOLO auf Webcam-Material anzuwenden. Im Rahmen des Workshops werden wir jedoch eine etwas langsamere Implementierung verwenden und YOLO mit OpenCV in Python ausführen.
 
-The fastest way for detection, performance-wise,  is building YOLO with darknet using CUDA.
+Eine funktionierende Installation von Python wird vorausgesetzt.
 
-It is also the most complex way to run YOLO on webcam footage.
+## 1. Installation zusätzlicher Pakete mit PIP
 
-For ease of use within the scope of the workshop, we will use a slightly slower implementation and run YOLO with OpenCV in Python.
+Die für die Echtzeit-Objekterkennung in Python benötigten Pakete sind:
 
-A working installation of Python will be assumed.
+- OpenCV: `pip install opencv-python`
+- Ultralytics Implementierung von YOLO: `pip install ultralytics`
 
-### 1. Installing additional packages with PIP
-Packages needed for real-time object detection using Python are:
-OpenCV: 
-```python
-pip install opencv-python
+## 2. Abrufen eines Bildstroms von einer Webcam und Anzeigen
 
-```
-Ultralytic’s implementation of YOLO: 
-
-```python
-pip install ultralytics
-
-```
-### 2. Getting a feed of images from a webcam and displaying it
-1. Create a new Python file in your IDE and insert the following code:
+Erstellen Sie eine neue Python-Datei in Ihrer IDE und fügen Sie den folgenden Code ein:
 
 ```python
 import cv2
+
 cap = cv2.VideoCapture(0)
 cap.set(3, 640)
 cap.set(4, 480)
 
 while True:
-    ret, img= cap.read()
+    ret, img = cap.read()
     cv2.imshow('Webcam', img)
-       
     if cv2.waitKey(1) == ord('q'):
         break
-                   
+
+cap.release()
+cv2.destroyAllWindows()
+```
+Dieser Code erstellt ein `VideoCapture`-Objekt für die Erfassung von Frames von der Standardkamera (0). Die Auflösung der Webcam wird auf 640x480 festgelegt. Anschließend durchlaufen wir die Frames und zeigen sie in einem Fenster an, bis der Benutzer 'q' drückt, um die Ausührung zu beenden.
+
+## 3. Objekterkennung mit YOLO
+
+Importieren Sie die Implementierung von Ultralytics YOLO:
+
+```python
+from ultralytics import YOLO
+
+model = YOLO("yolo-Weights/yolov8n.pt")
+```
+Erstellen Sie dann eine Variable, die eine Liste mit allen möglichen Klassennamen von Objekten enthält. Dies erleichtert später das Referenzieren bestimmter Klassen:
+
+```python
+classNames = ["person", "bicycle", "car", "motorbike", "aeroplane", "bus", "train", "truck", "boat",
+              "traffic light", "fire hydrant", "stop sign", "parking meter", "bench", "bird", "cat",
+              "dog", "horse", "sheep", "cow", "elephant", "bear", "zebra", "giraffe", "backpack", "umbrella",
+              "handbag", "tie", "suitcase", "frisbee", "skis", "snowboard", "sports ball", "kite", "baseball bat",
+              "baseball glove", "skateboard", "surfboard", "tennis racket", "bottle", "wine glass", "cup",
+              "fork", "knife", "spoon", "bowl", "banana", "apple", "sandwich", "orange", "broccoli",
+              "carrot", "hot dog", "pizza", "donut", "cake", "chair", "sofa", "pottedplant", "bed",
+              "diningtable", "toilet", "tvmonitor", "laptop", "mouse", "remote", "keyboard", "cell phone",
+              "microwave", "oven", "toaster", "sink", "refrigerator", "book", "clock", "vase", "scissors",
+              "teddy bear", "hair drier", "toothbrush"
+              ]
+```
+Nachdem das Webcam-Bild mit `success, img = cap.read()` gelesen wurde, verwenden wir YOLO, um Objekte zu erkennen und sie in unserer Ergebnisliste zu speichern:
+
+```python
+while True:
+    success, img = cap.read()
+    results = model(img, stream=True)
+```
+
+## 4. Auswertung der Ergebnisse und automatisches Pixeln
+
+Um die Ergebnisse (erkannten Objekte) auszuwerten, durchlaufen wir die Ergebnisse mit:
+```python
+    for r in results:
+        boxes = r.boxes
+        for box in boxes:
+```
+
+In diesem Beispiel möchten wir nur Personen erkennen und diese automatisch im Bild pixeln.
+
+Wenn YOLO ein Objekt mit dem Klassennamen "person" erkennt und zu mehr als 50% sicher ist, dass es richtig ist, möchten wir diesen Ausschnitt aus dem Bild weichzeichnen. 
+
+Dieser Code geht in die Schleife `for box`:
+
+```python
+            # Vertrauen
+            confidence = math.ceil((box.conf[0]*100))/100
+
+            # Klassenname
+            cls = int(box.cls[0])
+            if confidence >= 0.5 and classNames[cls] == "person":
+                nPersons += 1
+                # Begrenzungsrahmen
+                x1, y1, x2, y2 = box.xyxy[0]
+                x1, y1, x2, y2 = int(x1), int(y1), int(x2), int(y2) # in Integer-Werte umwandeln
+                topLeft = (x1, y1)
+                bottomRight = (x2, y2)
+                x, y = topLeft[0], topLeft[1]
+                w, h = bottomRight[0] - topLeft[0], bottomRight[1] - topLeft[1]
+                # Nimm die ROI mit Numpy slicing und zeichne sie weich
+                ROI = img[y:y+h, x:x+w]
+                blur = cv2.GaussianBlur(ROI, (51,51), 0) 
+
+                # FÜge die weichgezeichnete ROI wieder zurück in das Bild
+                img[y:y+h, x:x+w] = blur
+```
+
+Zuletzt zeigen wir das Bild mit dem weichgezeichneten Ausschnitt und ermöglichen die Ausführung mit der Taste 'q' zu stoppen:
+
+```python
+    cv2.imshow('Webcam', img)
+    if cv2.waitKey(1) == ord('q'):
+        break
+
 cap.release()
 cv2.destroyAllWindows()
 ```
 
-This will create a VideoCapture object and set it to capture frames from the default camera (0). It sets the resolution of the web cam to 640x480. 
-
-We then loop through the frames and display them in a window until the user presses ‘q’ to exit.
-
-### 3. Detecting objects with YOLO
-Import Ultralytic’s implementation of YOLO:
-
-```python
-from ultralytics import YOLO
-model = YOLO("yolo-Weights/yolov8n.pt")
-
-```
-
-Then create a variable holding a list with all the prossible objects’ classnames.This makes it easier for us to reference specific classes later:
-
-```python
-classNames = ["person", "bicycle", "car", "motorbike", "aeroplane", "bus", "train", "truck", "boat", 
-            "traffic light", "fire hydrant", "stop sign", "parking meter", "bench", "bird", "cat",
-            "dog", "horse", "sheep", "cow", "elephant", "bear", "zebra", "giraffe", "backpack", "umbrella",
-            "handbag", "tie", "suitcase", "frisbee", "skis", "snowboard", "sports ball", "kite", "baseball bat",
-            "baseball glove", "skateboard", "surfboard", "tennis racket", "bottle", "wine glass", "cup",
-            "fork", "knife", "spoon", "bowl", "banana", "apple", "sandwich", "orange", "broccoli",
-            "carrot", "hot dog", "pizza", "donut", "cake", "chair", "sofa", "pottedplant", "bed",
-            "diningtable", "toilet", "tvmonitor", "laptop", "mouse", "remote", "keyboard", "cell phone",
-            "microwave", "oven", "toaster", "sink", "refrigerator", "book", "clock", "vase", "scissors",
-            "teddy bear", "hair drier", "toothbrush"
-            ]
-
-```
-Now, after reading the webcam image with “ret, img= cap.read()”, we will use YOLO to detect objects and save them in our list of results:
-```python
- results = model(img, stream=True)
-
-```
-### 4. Evaluating results and establishing a threshold
-To evaluate the results (detected objects), we will loop over the results with:
-
-```python
-for r in results:
-    boxes = r.boxes
-            
-for box in boxes:
-
-```
-In this example, we want to only detect people and also do something when there are more than two people detected in the frame.
-So first, we need a need a variable that acts as a counter for the amount of people in frame, initialized before the for loop:
- 
-```python
-nPersons = 0
-
-```
-Now, if YOLO detects an object with the class name “person” and is more than 50% sure that it is right, we will want to draw a box around the object on frame.
-This code goes into the for box loop:
-
-```python
-# confidence
-confidence = math.ceil((box.conf[0]*100))/100
-
-# class name
-cls = int(box.cls[0])
-
-if confidence >= 0.5 and classNames[cls] == "person":
-    nPersons += 1
-    # bounding box
-    x1, y1, x2, y2 = box.xyxy[0]
-    x1, y1, x2, y2 = int(x1), int(y1), int(x2), int(y2) # convert to int values
-
-    # put box in cam
-    cv2.rectangle(img, (x1, y1), (x2, y2), (255, 0, 255), 3)
-
-```
-Lastly, if there are at least two people, we will print a special message to the console.
-This could also trigger a scene change in OBS or something similar.
-
-```python
-if nPersons >= 2:
-        print(nPersons, " persons detected.")
-
-```
-The full code
+## Der vollständige Code
 ```python
 from ultralytics import YOLO
 import cv2
 import math 
 
-# start webcam
+# Webcam starten
 cap = cv2.VideoCapture(0)
 cap.set(3, 640)
 cap.set(4, 480)
 
-
-# model
+# Modell
 model = YOLO("yolo-Weights/yolov8n.pt")
 
-# object classes
+# Klassen von Objekten
 classNames = ["person", "bicycle", "car", "motorbike", "aeroplane", "bus", "train", "truck", "boat",
               "traffic light", "fire hydrant", "stop sign", "parking meter", "bench", "bird", "cat",
               "dog", "horse", "sheep", "cow", "elephant", "bear", "zebra", "giraffe", "backpack", "umbrella",
@@ -159,38 +150,40 @@ classNames = ["person", "bicycle", "car", "motorbike", "aeroplane", "bus", "trai
               "teddy bear", "hair drier", "toothbrush"
               ]
 
-
 while True:
     success, img = cap.read()
     results = model(img, stream=True)
 
-    nPersons = 0
-
-    # coordinates
+    # Koordinaten
     for r in results:
         boxes = r.boxes
 
         for box in boxes:
-
-            # confidence
+            # Vertrauen
             confidence = math.ceil((box.conf[0]*100))/100
 
-            # class name
+            # Klassenname
             cls = int(box.cls[0])
             if confidence >= 0.5 and classNames[cls] == "person":
                 nPersons += 1
-                # bounding box
+                # Begrenzungsrahmen
                 x1, y1, x2, y2 = box.xyxy[0]
-                x1, y1, x2, y2 = int(x1), int(y1), int(x2), int(y2) # convert to int values
+                x1, y1, x2, y2 = int(x1), int(y1), int(x2), int(y2) # in Integer-Werte umwandeln
+                topLeft = (x1, y1)
+                bottomRight = (x2, y2)
+                x, y = topLeft[0], topLeft[1]
+                w, h = bottomRight[0] - topLeft[0], bottomRight[1] - topLeft[1]
+                # Nimm die ROI mit Numpy slicing und zeichne sie weich
+                ROI = img[y:y+h, x:x+w]
+                blur = cv2.GaussianBlur(ROI, (51,51), 0) 
 
-                # put box in cam
-                cv2.rectangle(img, (x1, y1), (x2, y2), (255, 0, 255), 3)
-    if nPersons >= 2:
-        print(nPersons, " persons detected.")
+                # FÜge die weichgezeichnete ROI wieder zurück in das Bild
+                img[y:y+h, x:x+w] = blur
     cv2.imshow('Webcam', img)
     if cv2.waitKey(1) == ord('q'):
         break
 
 cap.release()
 cv2.destroyAllWindows()
+
 ```
