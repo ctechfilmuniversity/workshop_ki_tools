@@ -1,28 +1,27 @@
 body {
     font-family: 'Source Sans Pro';
+    /* font-family: 'Open Sans'; */
+    /* font-family: 'Lora'; */
 }
-
 h1, h2, h3, h4 {
     font-family: 'Playfair Display';
+    /* font-family: 'Yanone Kaffeesatz'; */
     font-weight: 400;
-    margin-bottom: 0.5em;
-    margin-top: 0.1em;
+    margin-bottom: 0.6em;
+    margin-top: 0.6em;
 }
-
-
 .remark-slide-content { 
-    font-size: 1.7em; 
+    font-size: 1.5em; 
     /* margin: 14em;  */
     padding-left: 3em;
     padding-right: 3em;
 }
-
-.remark-slide-content h1 { font-size: 2.8em; }
-.remark-slide-content h2 { font-size: 2.2em; }
+.remark-slide-content h1 { font-size: 2.4em; }
+.remark-slide-content h2 { font-size: 1.8em; }
 .remark-slide-content h3 { font-size: 1.3em; }
 
 li { line-height: 1.6em; }
-/* ul { margin-top: 0.7em; } */
+/* li p { line-height: 1em; } */
 
 .red { color: #fa0000; }
 .green { color: #08fa00; }
@@ -40,6 +39,18 @@ code {
     border-radius: 5px;
 }
 
+
+.footnote {
+    position: absolute;
+    /* padding-left: 3em; */
+    padding-right: 3em;
+    bottom: 3em;
+    font-size: 0.7em; 
+    color:#a0a0a0
+}
+.footnote a {
+    color:#a0a0a0
+}
 
 .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
 .remark-code-line-highlighted     { background-color: #373832; }
@@ -70,12 +81,11 @@ code {
     color: #000000;
 
     background:
-    radial-gradient(ellipse at top     left, rgb(0, 200, 255)  15% , transparent 60%), 
-    radial-gradient(ellipse at bottom  left, rgb(162, 12, 255)  15% , transparent 60%),
-    radial-gradient(ellipse at top    right, rgb(255, 45, 213) 15% , transparent 60%),
-    radial-gradient(ellipse at bottom right, rgb(0, 128, 255)   15% , transparent 60%)
+    radial-gradient(ellipse at top     left, rgb(0, 97, 110)  15% , transparent 60%), 
+    radial-gradient(ellipse at bottom  left, rgb(255, 0, 136)  15% , transparent 60%),
+    radial-gradient(ellipse at top    right, rgb(230, 0, 124) 15% , transparent 60%),
+    radial-gradient(ellipse at bottom right, rgb(0, 139, 139)   15% , transparent 60%)
 }
-
 
 .inverse h1, .inverse h2, .inverse h3 {
     color: #ffffff;
@@ -139,24 +149,6 @@ code {
 
 /* LEGIE */
 
-.footnote {
-    position: absolute;
-    /* padding-left: 3em; */
-    padding-right: 3em;
-    bottom: 1.4em;
-    font-size: 0.7em; 
-    color:#a0a0a0
-}
-.footnote a {
-    color:#909090;
-    text-decoration: underline;
-}
-
-.remark-slide-content p { 
-    margin: 0.2em;
-}
-
-
 blockquote 
 {
     background: #eeeeee;
@@ -169,10 +161,10 @@ blockquote
     /* quotes: "\201C""\201D""\2018""\2019"; */
 }
 
-/* blockquote p 
+blockquote p 
 {
-    display: block;
-} */
+    display: inline;
+}
 
 .task {
     background: turquoise;
@@ -188,19 +180,14 @@ blockquote
 
 
 .header {
-    font-size: 0.8em; 
-    color: #707070;
-    /* opacity: 0.5; */
+    font-size: 0.9em; 
+    color: #4e4e4e;
+    /* position: absolute; */
+    /* top: 3em; */
+    /* margin-bottom: 10; */
 }
 
-.remark-slide-container { background: #cacaca; }
-
-.remark-slide-number { 
-    font-size: 0.8em;
-    color: #707070;
-    opacity: 1;
-}
-
+.remark-slide-container { background: #bdbdbd; }
 
 .left-even {
     width: 47%;
@@ -245,19 +232,3 @@ th {
   tbody tr:nth-child(even) {
     background-color: #eee;
   } */
-
-/* script {
-    display: none;
-    background-color: #e5e5e5;
-  } */
-
-.caption { 
-    font-size: 0.7em; 
-    color: #909090;
-    /* font-style: italic; */
-}
-
-.remark-code {
-    font-size:0.9em;
-}
-

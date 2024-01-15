@@ -5,15 +5,14 @@ class: center, middle, inverse
 
 
 
-#### Impulsvortrag 
   
-# *KI im Dokumentarfilm*
+# *KI Workshop*
 
-### Prof. Dr. Björn Stockleben & Prof. Dr. Lena Gieseke
+#### Prof. Dr. Björn Stockleben & Prof. Dr. Lena Gieseke & Anna Brauwers & Malte Hillebrand
 
-.center[<img src="./img/cx_filmuni_logo.png" alt="cx_filmuni_logo" style="width:90%;">]
+.center[<img src="./img/cx_filmuni_logo.png" alt="cx_filmuni_logo" style="width:100%;">]
 
-#### 11.10.2023 | MDR Panel | DOK Leipzig
+### 17. - 18.01.2021 | Hamburg Open
 
 
 
@@ -27,43 +26,57 @@ layout:false
 
 ## Agenda
 
-Teil 1
+--
+1. Einführung Machine Learning und Kontexte
 
-### Grundlagen am Beispiel von ChatGPT
+--
+2. Überblick KI Tools für Kreativschaffende
+
+--
+3. Anwendungsfall *No-Budget-Produktion mit KI-Tools*
+
+--
+4. Anwendungsfall *Auto-Director*
+
+--
+5. Experimente KI-Tools
+
+--
+6. Reflexion und Diskussion
+
+---
+template:inverse
+
+# Einführung 
+
+
+
+???
+.task[COMMENT:]  
+
+* Machine Learning und Kontexte
+
+.center[<img src="./img/facerecognition_01.gif" alt="facerecognition_01" style="width:100%;">]
+
+.footnote[[[maclife]](https://www.maclife.de/news/app-entwickler-koennen-gesichtsausdruecke-iphone-x-auswerten-speichern-10097355.html)]
+
+---
+
+.center[<img src="./img/pseudomnesia.png" alt="facerecognition_01" style="width:56%;">]
+
+.footnote[[[Allison Parshall. 2023. *How This AI Image Won a Major Photography Competition*. Scientific American.]](https://www.scientificamerican.com/article/how-my-ai-image-won-a-major-photography-competition/)]
+
+---
+template:inverse
+
+#### Einführung 
+
+## Grundlagen am Beispiel von ChatGPT
 
 ???
 .task[COMMENT:]  
 ...werde ich auf ein paar Grundlagen am Beispiel von ChatGPT eingehen, mit dem Ziel ein intuitives Verständnis jenseits des Hypes zu vermitteln.
 
-Björn Stockleben wirft dann einen genaueren Blick auf...
-
------------
-
-Storyline: Intuitives Verständnis jenseits des Hypes
-
-
---
-
-Teil 2
-
-### KI im Dokumentarfilm
-von Björn Stockleben
-
-
-???
-.task[COMMENT:]  
-
-...KI im Dokumentarfilm.
-
-
----
-template:inverse
-
-# ChatGPT
-
-
-???
-.task[COMMENT:]  
 
 Bei sogenannter schwacher KI stehen aktuell vor allem durch Daten selbstlernende Systeme im Fokus.
 
@@ -72,6 +85,10 @@ Lernen kann man als einen Prozess beschreiben, durch den ein System die eigene L
 Diesen Prozess des Lernen möchte ich Ihnen kurz anhand von ChatGPT erklären.   
 
 Zunächst noch einmal kurz zu ChatGPT selbst,...
+
+
+
+
 
 
 ---
@@ -126,7 +143,7 @@ Antworten:
 
 ## Funktionsweise
 
-Ergänze:
+Vervollständige:
 
 > Computer sind nutzlos,...
   
@@ -143,7 +160,11 @@ Antworten:
 --
 * ...wenn kaputt → 20 Punkte
 
---
+
+---
+.header[Grundlagen | ChatGPT]
+
+## Funktionsweise
 
 > Die Wahrscheinlichkeit von bestimmten Buchstabenreihenfolgen werden katalogisiert.
 
@@ -168,7 +189,9 @@ Die Schichten werden Transformatorblöcke genannt und kombinieren standardmäßi
 
 ## Funktionsweise
 
-Vervollständige den Satz "Computer sind nutzlos, ...":
+*Vervollständige den Satz "Computer sind nutzlos, ..."*:
+
+--
 
 > Computer sind nutzlos, wenn sie nicht richtig programmiert oder konfiguriert sind.
 
@@ -177,9 +200,11 @@ Vervollständige den Satz "Computer sind nutzlos, ...":
 
 ## Funktionsweise
 
-Vervollständige den Satz "Computer sind nutzlos, ..." von Picasso:
+*Vervollständige den Satz von Picasso "Computer sind nutzlos, ..."*:
 
-> Entschuldigung für das Missverständnis, aber ich kann keinen Satz von Picasso finden, der mit "Computer sind nutzlos" beginnt. Picasso lebte von 1881 bis 1973, lange bevor Computer in der heutigen Form existierten. Während seines Lebens war die digitale Technologie noch nicht weit entwickelt, und es ist unwahrscheinlich, dass Picasso einen solchen Satz über Computer geäußert hat. Es könnte sein, dass das Zitat, das du erwähnst, nicht von Picasso stammt, sondern von einer anderen Quelle oder es könnte sich um eine moderne Interpretation oder Paraphrase seiner Ideen handeln.
+--
+
+> [...], aber ich kann keinen Satz von Picasso finden, der mit "Computer sind nutzlos" beginnt. Picasso lebte von 1881 bis 1973, lange bevor Computer in der heutigen Form existierten. Während seines Lebens war die digitale Technologie noch nicht weit entwickelt, und es ist unwahrscheinlich, dass Picasso einen solchen Satz über Computer geäußert hat. Es könnte sein, dass das Zitat, das du erwähnst, nicht von Picasso stammt, sondern von einer anderen Quelle oder es könnte sich um eine moderne Interpretation oder Paraphrase seiner Ideen handeln.
 
 ---
 .header[Grundlagen]
@@ -210,7 +235,7 @@ Vervollständige den Satz "Computer sind nutzlos, ..." von Picasso:
 
 --
 
-> ChatGPT hat kein Verständnis von dem, worüber es spricht!
+> Machine Learning Algorithmen haben kein Verständnis von dem, womit sie arbeiten!
 
   
 
@@ -302,41 +327,111 @@ Finde den Fehler.
 
 Während beim Alter noch eine gewisse Unsicherheit besteht, zweifelt das Programm nicht ein einziges mal daran dass ich männlich bin Und den Herstellen scheint das auch nicht aufgefallen zu sein. Naja.
 
+---
+.header[Grundlagen]
+
+## Text und Bild?
+
+### *"A corgi playing a flame throwing trumpet"*
+
+.center[<img src="img/corgi_01.png" alt="corgi_01" style="width:45%;">]  
+
 
 ---
-.header[Grundlagen | Daten]
+.header[Grundlagen]
 
-## Alignment Efforts
+## Separate Repräsentation
+
+
+.center[<img src="img/dalle_01.png" alt="pseudomnesia" style="width:100%;">] 
+
+* Expliziter Übersetzungsschritt von Text zu Bild
+
+--
+* Engineering von Menschen!
+
+.footnote[[[Ryan O'Connor. 2022. How DALL-E 2 Actually Works. AssemblyAI.]](https://www.assemblyai.com/blog/how-dall-e-2-actually-works/))]
 
 
 ???
 .task[COMMENT:]  
 
-* 1,764 API calls
-    * "categories of all the knowledge you have as table"
-    * 31 fields and 425 subfields
-    * "List the most important humans in field in the field of subfield."
-* Anzahl der am meisten genannten Sachen / Menschen
-* "Please note that there are numerous individuals who have contributed significantly to the field of architecture, and this list only presents a small subset."
+Hier ist es die sehr wichtige Unterscheidung zur menschlichen Intelligenz, dass es aktuell kein oder nur sehr eingeschränktes automatisches Übertragen von Kompetenz und Wissen in einem Aufgabenbereich zu einem anderen gibt. Algorithmen haben kein abstrahierendes, übergeordnetes Verstehen. 
+
+-------------------
+
+ 1. First, a text prompt is input into a text encoder that is trained to map the prompt to a representation space.
+2. Next, a model called the prior maps the text encoding to a corresponding image encoding that captures the semantic information of the prompt contained in the text encoding.
+3. Finally, an image decoder stochastically generates an image which is a visual manifestation of this semantic information.
+
+## Repräsentation
+
+Je eingegrenzter die Anwendung, desto hochwertiger die Ergebnisse.
+
+.center[<img src="./img/facerecognition_01.gif" alt="facerecognition_01" style="width:80%;">]
+
+
+> Datensätze und Verknüpfungen entwickeln sich kontinuierlich und rasant weiter!
+
+.footnote[[[maclife]](https://www.maclife.de/news/app-entwickler-koennen-gesichtsausdruecke-iphone-x-auswerten-speichern-10097355.html)]
+
+
+---
+
+.center[<img src="img/pseudomnesia.png" alt="pseudomnesia" style="width:60%;">]  
+
+
+.footnote[[[Allison Parshall. 2023. *How This AI Image Won a Major Photography Competition*. Scientific American.]](https://www.scientificamerican.com/article/how-my-ai-image-won-a-major-photography-competition/)]
+
+
+---
+.header[Bildgenerierung]
+
+## DALL·E 2
+  
+<img src="img/pseudomnesia.png" alt="pseudomnesia" style="width:22%;"> 
+
+*The Electrician*, from the series PSEUDOMNESIA, 2022.  
+Credit: Boris Eldagsen, co-created with DALLE2  
+Courtesy of Photo Edition Berlin
 
 --
 
-.center[<img src="img/worldview_02.png" alt="worldview_02" style="width:100%;">]  
+**Sony World Photography Awards, 2023: creative photo category winner!**
 
 
-.footnote[[Kim Albrecht. 2023. [*Artificial Worldviews*](https://artificial-worldviews.kimalbrecht.com/).]]
+.footnote[[[Allison Parshall. 2023. *How This AI Image Won a Major Photography Competition*. Scientific American.]](https://www.scientificamerican.com/article/how-my-ai-image-won-a-major-photography-competition/)]
+
+---
+.header[Bildgenerierung]
+
+## DALL·E 2
+  
+<img src="img/pseudomnesia_a.png" alt="pseudomnesia_a" style="width:30%;">  <img src="img/pseudomnesia_b.png" alt="pseudomnesia_b" style="width:32%;">    <img src="img/pseudomnesia_c.png" alt="pseudomnesia_c" style="width:33%;">
+
+
+---
+.header[Bildgenerierung]
+
+## DALL·E 2
+  
+<img src="img/pseudomnesia.png" alt="pseudomnesia" style="width:22%;"> 
+
+Boris Eldagsen:
+  
+> For me, as an artist, AI generators are absolute freedom.
+
+
+.footnote[[[Allison Parshall. 2023. *How This AI Image Won a Major Photography Competition*. Scientific American.]](https://www.scientificamerican.com/article/how-my-ai-image-won-a-major-photography-competition/)]
 
 
 ???
 .task[COMMENT:]  
 
-* Secondly, the list is led by Rachel Carson and Jane Goodall. Rachel Carson is known for her book Silent Spring (1962) and for advancing the global environmental movement. Jane Goodall is considered the world's foremost expert on chimpanzees. An American marine biologist and an English primatologist and anthropologist are the two most named figures within the project.
+> Let's call it promptography?
 
-It is worth noting that ranked fourth is a Kenyan social, environmental, and political activist named Wangari Maathai. It is also worth noting that Rachel Carson, Jane Goodall, and Wangari Maathai all appear in the same cluster on the map around the fields of Geography, Nature, and Environment.
 
-In comparison, the Pantheon project ranks people, among others, by the number of Wikipedia language editions and count of article clicks. In this ranking, the first female is Mary, mother of Jesus, at rank 33 (accessed on 7th of August 2023). Muhammad, Isaac Newton, and Jesus are the top-ranked figures within the Pantheon project.
-
-The results from GPT-3.5 are more female, more diverse, and less religious than the Pantheon ranking. 
+I used DALL-E 2, and it was all done by text prompts and inpainting and outpainting. For inpainting, you could say, “I don’t like his tie,” and you erase it and write, “I want him to have a white tie.” Then you get suggestions. And if you don’t like any of those suggestions, you start again. Outpainting [is what] you do when the frame is not large enough. You put in an additional frame so you can see his whole tie, his pants, the chair, the floor. It’s endless.
 
 
 
@@ -344,5 +439,7 @@ The results from GPT-3.5 are more female, more diverse, and less religious than 
 ---
 template:inverse
 
-# KI im Dokumentarfilm?
+#### Nächster Teil
+
+## Überblick KI Tools
 
