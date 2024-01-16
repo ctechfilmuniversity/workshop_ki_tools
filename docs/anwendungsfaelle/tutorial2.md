@@ -9,9 +9,15 @@ nav_order: 2
 
 # Auto-Director
 
-Es gibt verschiedene Möglichkeiten, wie YOLO implementiert werden kann, um verschiedene Objekte auf Standbildern, Videos oder Echtzeit-Kameramaterial zu erkennen. Der schnellste Weg für die Erkennung, leistungstechnisch, besteht darin, YOLO mit darknet unter Verwendung von CUDA zu implementieren. Dies ist auch der komplexeste Weg, YOLO auf Webcam-Material anzuwenden. Im Rahmen des Workshops werden wir jedoch eine etwas langsamere Implementierung verwenden und YOLO mit OpenCV in Python ausführen.
+In diesem Anwendungsfall wird eine AI genutzt, die trainiert wurden eine Vielzahl von Objekten in Echtzeit zu erkennen und zu klassifizieren.
 
-Eine funktionierende Installation von Python wird vorausgesetzt.
+**YOLO** (You Only Look Once) heißt die hier verwendete AI, entwickelt von [Josep Redmon](https://pjreddie.com/darknet/yolo/).
+
+Es gibt verschiedene Möglichkeiten, wie YOLO implementiert werden kann, um verschiedene Objekte auf Standbildern, Videos oder Echtzeit-Kameramaterial zu erkennen. Der schnellste Weg für die Erkennung, leistungstechnisch, besteht darin, YOLO mit [darknet](https://pjreddie.com/darknet/) unter Verwendung von [CUDA](https://developer.nvidia.com/cuda-toolkit) zu implementieren. Dies ist auch der komplexeste Weg, YOLO auf Bildmaterial anzuwenden. 
+
+Im Rahmen des Workshops werden wir jedoch eine etwas langsamere Implementierung verwenden und YOLO mit OpenCV in Python ausführen. Hierzu nutzen wir die Implementation von [Ultralytics](https://www.ultralytics.com/), YOLO v8.
+
+Die im Rahmen des Workshops verwendete Python-Version ist Python 3.11.5.
 
 ## 0. Installation zusätzlicher Pakete mit PIP
 
@@ -36,8 +42,6 @@ import cv2
 import math 
 ```
 
-Die Webcam wird mit OpenCV wie folgt gestartet.
-
 Dieser Code erstellt ein `VideoCapture`-Objekt für die Erfassung von Frames von der Standardkamera (0). Die Auflösung der Webcam wird auf 640x480 festgelegt. 
 
 Beachten Sie, dass die `0` als Parameter in der Funktion `cv2.VideoCapture(0)` auf die ERSTE gefundene Kamera zu greift. Bei mehreren Kameras müssen Sie hier entsprechend die gewünschte Kamera spezifizieren.
@@ -55,7 +59,7 @@ cap.set(4, 480)
 
 Anschließend setzen wir das Programm in eine Endlosschleife und zeigen fortwährend die Frames der Kamera in einem Fenster an.
 
-Wenn der Benutzer `q` drückt, wird die Ausührung beendet.
+Wenn der Benutzer `q` drückt, wird die Ausführung beendet.
 
 ```python
 # 1.2
@@ -147,7 +151,7 @@ Im Anschluss nutzen wir diese erkannten Objekte um das Webcam-Bild abhängig von
 
 Dafür ist wichtig herauszufinden, wie sicher sich YOLO ist ein bestimmtes Objekt zu erkennen. Auf diesen Wert greifen Sie zu und speichern ihn in der Variable `confidence`
 
-Desweiteren greifen Sie auf die Klasse des erkannten Objekts zu um nachher den Bildausschnitt verändern zu könnnen, je nachdem ob ein Mensch und/oder ein Handy im Kamerabild erkannt wurde.
+Des Weiteren greifen Sie auf die Klasse des erkannten Objekts zu um nachher den Bildausschnitt verändern zu können, je nachdem ob ein Mensch und/oder ein Handy im Kamerabild erkannt wurde.
 
 ```python
             # 3.1
@@ -183,7 +187,7 @@ Sollte YOLO sich zu 50% sicher sein, dass sich in einem Bildausschnitt ein Handy
             # 3.3
             # Sollte YOLO sich zu mehr als 50% sicher sein, dass ein Objekt der Klasse "cell phone" gefunden wurde, machen wir etwas
             if confidence >= 0.5 and classNames[cls] == "cell phone":
-                # Hier finden wir die "bounding box" des Handys, den Rahmen des Bildausschnitts indem sie sich befindet
+                # Hier finden wir die "bounding box" des Handys, den Rahmen des Bildausschnitts indem es sich befindet
                 x1, y1, x2, y2 = box.xyxy[0]
                 x1, y1, x2, y2 = int(x1), int(y1), int(x2), int(y2) # Konvertieren in Integer (Pixel können keine Nachkommastellen haben!)
                 # 4.3
@@ -199,7 +203,7 @@ Wir werden drei Szenarien implementieren, die Sie an- und ausschalten können:
 2. Das automatische Pixeln von Personen im Bildausschnitt
 3. Ein Logo einfügen anstelle eines Handys im Bildausschnitt
 
-Der Einffachheit wegen, erstellen wir drei Variablen zu Beginn als "Einstellungen" um jede Funktionen an- und ausschalten zu können.
+Der Einfachheit wegen, erstellen wir drei Variablen zu Beginn als "Einstellungen" um jede Funktionen an- und ausschalten zu können.
 
 ```python
 # 4.0
@@ -250,10 +254,10 @@ Hierfür greifen Sie auch wieder auf die gespeicherte Bounding Box zu, schneiden
                     # Nun schneiden wir diesen Ausschnitt aus dem Webcam-Bild aus
                     ROI = img[y:y+h, x:x+w]
                     # Und zeichnen ihn mit einem Gaussian Blur weich
-                    blur = cv2.GaussianBlur(ROI, (51,51), 0) 
+                    blurimg = cv2.GaussianBlur(ROI, (51,51), 0) 
 
                     # Zuletzt fügen wir ihn wieder in das Webcam-Bild ein
-                    img[y:y+h, x:x+w] = blur
+                    img[y:y+h, x:x+w] = blurimg
 ```
 
 Zuletzt sollen erkannte Handys durch ein Logo ersetzt werden.
@@ -345,10 +349,10 @@ while True:
 
                     # Grab ROI with Numpy slicing and blur
                     ROI = img[y:y+h, x:x+w]
-                    blur = cv2.GaussianBlur(ROI, (51,51), 0) 
+                    blurimg = cv2.GaussianBlur(ROI, (51,51), 0) 
 
                     # Insert ROI back into image
-                    img[y:y+h, x:x+w] = blur
+                    img[y:y+h, x:x+w] = blurimg
 
                 if name:
                     # object details
