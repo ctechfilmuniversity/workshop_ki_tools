@@ -32,7 +32,6 @@ Mit
 2. [Überblick KI Tools für Kreativschaffende](https://docs.google.com/presentation/d/1XkgB9onH-g4bUVP1aYDOZ3JEGqBpxtHJCQAtnU6r84s/edit?usp=sharing)
 3. [Anwendungsfall *No-budget Production with AI Tools*](./anwendungsfaelle/tutorial1.md)
 4. [Anwendungsfall *Auto-Director*](./anwendungsfaelle/tutorial1.md)
-5. [Experimente KI-Tools](./uebersicht/index.md)
 6. Reflexion und Diskussion
 
 
