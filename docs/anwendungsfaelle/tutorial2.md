@@ -32,7 +32,9 @@ Die für die Echtzeit-Objekterkennung in Python benötigten Pakete sind:
 
 ## 1. Abrufen eines Bildstroms von einer Webcam und Anzeigen
 
-Öffnen Sie die Python-Datei `autodirector_tutorial.py` in Ihrer IDE und fügen Sie die nachfolgenden Code-Schnipsel an den entsprechenden Stellen ein.
+Öffnen Sie die Python-Datei `autodirector_tutorial.py` in Ihrer IDE und fügen Sie die nachfolgenden Code-Schnipsel an den entsprechenden Stellen ein:
+
+Beispiel: **# 1.0 und der nachfolgende Code wird an die Stelle # 1.0 kopiert!**
 
 Um mithilfe von OpenCV 2 die Bilder der Kamera darzustellen und im späteren Verlauf zu verändern, müssen Sie zwei Pakete und ihre Funktionen zuerst importieren:
 
@@ -386,4 +388,21 @@ while True:
 
 cap.release()
 cv2.destroyAllWindows()
+```
+START TUTORIAL
+
+```python
+# 1.0
+
+# 2.0
+
+# 4.0
+
+# 1.1
+
+# 2.1
+
+# 2.2
+
+# 1.2
 ```
