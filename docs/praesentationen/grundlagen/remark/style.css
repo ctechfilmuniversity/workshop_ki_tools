@@ -70,10 +70,10 @@ code {
     color: #000000;
 
     background:
-    radial-gradient(ellipse at top     left, rgb(0, 200, 255)  15% , transparent 60%), 
-    radial-gradient(ellipse at bottom  left, rgb(162, 12, 255)  15% , transparent 60%),
-    radial-gradient(ellipse at top    right, rgb(255, 45, 213) 15% , transparent 60%),
-    radial-gradient(ellipse at bottom right, rgb(0, 128, 255)   15% , transparent 60%)
+    radial-gradient(ellipse at top     left, rgb(0, 97, 110)  15% , transparent 60%), 
+    radial-gradient(ellipse at bottom  left, rgb(255, 0, 136)  15% , transparent 60%),
+    radial-gradient(ellipse at top    right, rgb(230, 0, 124) 15% , transparent 60%),
+    radial-gradient(ellipse at bottom right, rgb(0, 139, 139)   15% , transparent 60%)
 }
 
 
