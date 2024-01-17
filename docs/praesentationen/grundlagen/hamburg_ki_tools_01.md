@@ -91,7 +91,7 @@ Zunächst noch einmal kurz zu ChatGPT selbst,...
 * OpenAI
     * Forschungseinrichtung
     * Non-profit & for-profit 
-    * Z.B. Microsoft hat über $10 Billionen investiert
+    * Z.B. Microsoft hat über $10 Milliarden investiert
 --
 * Die sich am schnellsten verbreitende Verbraucher-Software der Geschichte
 
@@ -191,11 +191,22 @@ Die Schichten werden Transformatorblöcke genannt und kombinieren standardmäßi
 
 ## Funktionsweise
 
-*Vervollständige den Satz von Picasso "Computer sind nutzlos, ..."*:
+*Vervollständige den Satz von Picasso "Computer sind nutzlos, ..."* (mit Version 3.5):
 
 --
 
 > [...], aber ich kann keinen Satz von Picasso finden, der mit "Computer sind nutzlos" beginnt. Picasso lebte von 1881 bis 1973, lange bevor Computer in der heutigen Form existierten. Während seines Lebens war die digitale Technologie noch nicht weit entwickelt, und es ist unwahrscheinlich, dass Picasso einen solchen Satz über Computer geäußert hat. Es könnte sein, dass das Zitat, das du erwähnst, nicht von Picasso stammt, sondern von einer anderen Quelle oder es könnte sich um eine moderne Interpretation oder Paraphrase seiner Ideen handeln.
+
+---
+.header[Grundlagen | ChatGPT]
+
+## Funktionsweise
+
+*Vervollständige den Satz von Picasso "Computer sind nutzlos, ..."*
+
+<br>
+
+ChatGPT Versionen > 4 kennen Picasso's Zitat! 🥳
 
 ---
 .header[Grundlagen]
