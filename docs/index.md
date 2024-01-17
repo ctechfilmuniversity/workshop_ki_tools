@@ -34,3 +34,10 @@ Mit
 4. [Anwendungsfall *Auto-Director*](./anwendungsfaelle/tutorial1.md)
 5. [Experimente KI-Tools](./uebersicht/index.md)
 6. Reflexion und Diskussion
+
+
+## Webseite
+  
+
+
+![qr_code](./img/qr_code.png)
