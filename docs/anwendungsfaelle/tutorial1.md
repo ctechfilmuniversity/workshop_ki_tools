@@ -17,6 +17,8 @@ Hierfür werden wir folgende Tools verwenden:
 3. **Lumen5:** Zur Generierung des eigentlichen Videos.
 4. **Kapwing:** Zum Hinzufügen von Untertiteln in kürzester Zeit.
 
+Mögliches Ergebnis: [Video](https://drive.google.com/file/d/1wKaH0PtCE5S4ZoRpjBaOKbJMx72eJJJU/view?usp=sharing)
+
 ## 1. Skriptgenerierung mit ChatGPT
 
 Besuchen Sie https://chat.openai.com/ und melden Sie sich in Ihrem Konto an.
