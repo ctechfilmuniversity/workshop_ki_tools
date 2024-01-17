@@ -108,7 +108,7 @@ Zunächst noch einmal kurz zu ChatGPT selbst,...
 
 --
 
-Ergänze:
+Vervollständige:
 
 > Computer sind nutzlos,...
   
